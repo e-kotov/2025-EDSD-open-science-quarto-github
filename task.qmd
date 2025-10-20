@@ -18,6 +18,8 @@ The final goal is to have a repository on GitHub with:
   
   - a `README.md` file in the root of the repository that briefly describes the project (e.g. specifies that this is an assignment done as part of EDSD linking back to EDSD website, or to this workshop materials, etc. )
 
+  - post the link to your repository and/or website in `Issues` of this repository: [https://github.com/e-kotov/2025-EDSD-open-science-quarto-github/issues](https://github.com/e-kotov/2025-EDSD-open-science-quarto-github/issues){target="_blank"}
+
 Requirements:
 
   - The Quarto document can be rendered without errors into an `html` file
@@ -26,7 +28,7 @@ Requirements:
 
   - The document contains at least two figures summarizing the flows data (e.g. a histogram, a scatter plot, etc.)
 
-  - The document contains a flowmap
+  - The document contains a flowmap (either static with `{flowmapper}` or interactive with `{flowmapblue}`) showing the migration flows of scholars between countries.
 
   - The document layout uses some of the custom figure placement options from [Article Layout](https://quarto.org/docs/authoring/article-layout.html){target="_blank"}.
 
