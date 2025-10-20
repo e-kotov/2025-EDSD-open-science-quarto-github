@@ -1,0 +1,438 @@
+---
+title: "📊 Workshop Task"
+toc: true
+toc-depth: 3
+---
+
+Your task is to create a reproducible summary report with key statistics and a flowmap using the [Scholarly Migration Database](https://www.scholarlymigration.org/){target="_blank"}. This is a beginner level task. 
+
+If you are feeling especially confident, you can use the data from the [The Human Migration Database](https://github.com/MaciejDanko/HMigD_Shiny_App_I), which you can download via the interactive [web app](https://maciej-jan-danko.shinyapps.io/HMigD_Shiny_App_I/) (see last the tab for downloads). Warning: this is likely take more time than with the Scholarly Migration Database, as there are more data columns and you will spend more time reading the codebook. So only go for this task if the R programming part and Quarto are easy for your.
+
+# Final goal
+
+The final goal is to have a repository on GitHub with:
+  
+  - a reproducible Quarto (`*.qmd`) document in the root of the repository
+  
+  - an `html` file created from the `*.qmd` file above in the `docs` folder of the repository
+  
+  - a `README.md` file in the root of the repository that briefly describes the project (e.g. specifies that this is an assignment done as part of EDSD linking back to EDSD website, or to this workshop materials, etc. )
+
+Requirements:
+
+  - The Quarto document can be rendered without errors into an `html` file
+
+  - The document contains R code to load the data and perform any neccessary data transformation for visualisation. Instead of commenting the code, use plain or markdown-formatted text outside the code blocks.
+
+  - The document contains at least two figures summarizing the flows data (e.g. a histogram, a scatter plot, etc.)
+
+  - The document contains a flowmap
+
+  - The document layout uses some of the custom figure placement options from [Article Layout](https://quarto.org/docs/authoring/article-layout.html){target="_blank"}.
+
+
+# Step by step instructions
+
+Make sure you went through the [setup steps](setup.qmd), and therefore have all the tools and a GitHub account.
+
+## 1. Cloning the repository
+
+### 1.1. Clone using your GitHub account
+
+1. Go to the repository of the [Scholarly Migration Database](https://github.com/MPIDR/Global-flows-and-rates-of-international-migration-of-scholars/){target="_blank"} and "Fork" it into your GitHub account.
+
+![](media/images/fork-smd.png){fig-align="center" width="60%"}
+
+:::{.panel-tabset group="ide"}
+
+# Positron
+
+- Open `Positron` and create a new folder (project).
+
+    - Create new Folder (Project) from the menu:
+
+    ![](media/images/git-clone-positron-000a.png)
+
+    Alternatively, from the Command Palette (`CMD`+`Shift`+`P` on `macOS` or `CTRL`+`Shift`+`P` on `Windows`. By the way, `RStudio` also has a similar Command Palette accessible with the same shortcut):
+
+    ![](media/images/git-clone-positron-000b.png)
+
+    - Copy the link to your repository from the web and paste it in the prompt, also choose local folder where you want to save the repository:
+
+    ![](media/images/git-clone-positron-001.png)
+
+    - You may get a warning about trusting or not trusing the contents of the folder. This time feel free to choose "Trust", as it is your own repository. In other cases use your judgement.
+
+    ![](media/images/git-clone-positron-002.png)
+
+    - If this is your first time using git and GitHub on this computer, you may get a prompt like this. You may also get it later, when you try to push (upload) any changes you make in the repository back to GitHub:
+
+    ![](media/images/git-clone-positron-003.png){fig-align="center"}
+
+    *You may not get this prompt if the repository you are downloading is public (which in this case when you have created a fork, it is). You will get this prompt when you try to push (upload) any changes you make in the repository back to GitHub.*
+    
+    You should choose the blue button **"Sign in with your browser"**.
+
+    - Complete the authentication in the web browser with your GitHub account:
+
+    ![](media/images/git-clone-rstudio-005.png)
+
+# RStudio
+
+- Open `RStudio` and create a new project.
+
+    - Choose "Version Control":
+
+    ![](media/images/git-clone-rstudio-001.png)
+
+    - Choose "Git" as your version control system:
+
+    ![](media/images/git-clone-rstudio-002.png)
+
+    - Copy the link to your repository from the web and paste it in the prompt:
+
+    ![](media/images/git-clone-rstudio-003.png)
+
+    - If this is your first time using git and GitHub on this computer, you may get a prompt like this. You may also get it later, when you try to push (upload) any changes you make in the repository back to GitHub:
+
+    ![](media/images/git-clone-rstudio-004.png)
+
+    *You may not get this prompt if the repository you are downloading is public (which in this case when you have created a fork, it is). You will get this prompt when you try to push (upload) any changes you make in the repository back to GitHub.*
+    
+    You should choose the blue button **"Sign in with your browser"**.
+
+    - Complete the authentication in the web browser with your GitHub account:
+
+    ![](media/images/git-clone-rstudio-005.png)
+
+
+:::
+
+You only need to do this once, as this sets up your local `git` installation to use your GitHub acccount. So when you work with another online repository, you should just be able to access it without those extra steps.
+
+### 1.2. Fallback if everything else fails, just download the repository
+
+If nothing works for you, feel free to just download the [Scholarly Migration Database](https://github.com/MPIDR/Global-flows-and-rates-of-international-migration-of-scholars/){target="_blank"} repository manually.
+
+![](media/images/download-repo.png){fig-align="center" width="50%"}
+
+## 2. Explore the data
+
+::: {.panel-tabset group="ide"}
+
+
+# Positron
+
+- Create a new Quarto document in the root folder of the cloned or downloaded repository:
+
+Using the menu `File`->`New File...` or Command Pallette (`CMD`+`Shift`+`P` on `macOS` or `CTRL`+`Shift`+`P` on `Windows`) create new Quarto document:
+
+![](media/images/new-positron-quarto-doc.png)
+
+You will get:
+
+![](media/images/new-positron-quarto-doc-new.png)
+
+- Using the basic R and Quarto syntax (see [intro reference of basic Quarto syntax here](https://quarto.org/docs/get-started/computations/rstudio.html){target="_blank"}), list the packages you need to be loaded in the first chunk/block of code.
+
+- Add more chunks/blocks of code to load the data (you may use either **openalex_2024_V1_scholarlymigration_countryflows_enriched.csv** or **scopus_2024_V1_scholarlymigration_countryflows_enriched.csv**) and explore it. You may ignore the code visibility options for now. Just leave default options for code blocks by not addint any options at this point. Use [`{dplyr}`](https://dplyr.tidyverse.org/) for data manipulation and [`{ggplot2}`](https://ggplot2.tidyverse.org/) for data visualization.
+
+
+# RStudio
+
+- Create a new Quarto document in the root folder of the cloned or downloaded repository:
+
+Either in the top left of `RStudio`:
+
+![](media/images/new-quarto-doc.png)
+
+Or in the bottom right in the Files pane:
+
+![](media/images/new-quarto-doc-file-pane.png)
+
+- Using the basic R and Quarto syntax (see [intro reference of basic Quarto syntax here](https://quarto.org/docs/get-started/computations/rstudio.html){target="_blank"}), list the packages you need to be loaded in the first chunk/block of code.
+
+- Add more chunks/blocks of code to load the data (you may use either **openalex_2024_V1_scholarlymigration_countryflows_enriched.csv** or **scopus_2024_V1_scholarlymigration_countryflows_enriched.csv**) and explore it. You may ignore the code visibility options for now. Just leave default options for code blocks by not addint any options at this point. Use [`{dplyr}`](https://dplyr.tidyverse.org/) for data manipulation and [`{ggplot2}`](https://ggplot2.tidyverse.org/) for data visualization.
+
+:::
+
+## 3. Spatial aspect of the migration data
+
+Apart from the histograms, scatterplots or other plots, it is also useful to look at your data on a map like so:
+
+
+```{r}
+shiny::tags$iframe(src = "media/interactive/flowmap_widget.html", width = "100%", height = "600px")
+```
+
+
+The data in the Scholarly Migration Database does not contain coordinates, but has country names and their [ISO codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes){target="_blank"}. So you can combine this data with some other datasource that coordinates or boundaries for countries and their ISO codes.
+
+### 3.1 Packages for spatial data and flow mapping
+
+Here is a list of packages that you need to map the migration data:
+
+```{r}
+#| eval: false
+packages <- c(
+  "sf", # for working with spatial data
+  "spData", # to easily get world boundaires
+  "countrycode", # to convert between iso2 and iso3 country codes
+  "flowmapblue", # for interactive flow mapping
+  "flowmapper" # for static flow mapping using ggplot2
+  )
+install.packages(packages)
+```
+
+::: callout-note
+You only need to install the packages once, do not keep the code to install the packages in your Quarto document, at least not as it is presented above. This code does NOT check if the packages are already installed. So if you keep this code in your Quarto document, the listed packages will be downloaded every time you render the document into `html`, `pdf`, or any other format. To learn more about package management in R, see the tutorials in [Projects’ workflow for reproducibility and replicability using R](https://www.ekotov.pro/2025-mpidr-open-science-reproducible-workflows/){target="_blank"}.
+:::
+
+```{r}
+#| warning: false
+library(sf)
+library(spData)
+library(countrycode)
+library(flowmapblue)
+library(flowmapper)
+
+library(tidyverse)
+```
+
+
+
+### 3.2. How to prepare the data for flow mapping
+
+For mapping the flows you will need the coorindates of the countries.
+
+An easy way to create these coordinates is by getting the data on country boundaries from the [`{spData}`](https://jakubnowosad.com/spData/){target="_blank"} package:
+
+```{r}
+countries <- spData::world
+glimpse(countries)
+```
+
+
+So this spatial data is just like a regular `data.frame`/`tibble`, but with an extra column with geometry data. Therefore, you can plot this data using `ggplot2`:
+
+```{r}
+countries |> 
+  ggplot() +
+  geom_sf()
+```
+
+
+You can also include several layers in the same plot:
+
+```{r}
+#| warning: false
+ggplot() +
+  geom_sf(data = countries) +
+  geom_sf(data = st_point_on_surface(countries), color = "darkred")
+```
+
+For flow mapping, you only need one point per country, so you only need a center (or more formally a 'centroid', but `st_point_on_surface()` function produces a special kind of centroid that is guaranteed to be placed on the polygon surface and never placed outside irregularly shaped polygon) of each country's polygon. Here is how you can do it:
+
+
+```{r}
+#| warning: false
+
+countries_centroids <- countries |> 
+  st_centroid() |> # finds a center of each country'spolygon
+  st_coordinates() |>  # extracts numeric coorindates from the POINT geometry
+  as.data.frame() |> # converts the matrix to a data.frame 
+  setNames(c("lon", "lat")) |> # renames the columns
+  cbind(countries) |> # adds back all the columns (except for geometry) form `countries`
+  select(iso_a2, lon, lat, name_long) # only selects a few columns that we really need
+
+glimpse(countries_centroids)
+```
+
+You may freely reuse this code above in your Quarto report.
+
+The data format you get is ideal for both [`{flowmapblue}`](https://flowmapblue.github.io/flowmapblue.R/){target="_blank"} and [`{flowmapper}`](https://github.com/JohMast/flowmapper) packages. You only need to tweak the column names of the `countries_centroids` `data.frame` before using it with either of these packages. You can see relevant package documentation for more details. Alternatively, you can follow tutorials for [`{flowmapper}`](https://ropenspain.github.io/spanishoddata/articles/flowmaps-static.html#reshape-flows-for-visualization){target="_blank"} and [`{flowmapblue}`](https://ropenspain.github.io/spanishoddata/articles/flowmaps-interactive.html#prepare-data-for-visualization){target="_blank"}.
+
+### 3.3. Country codes
+
+You will find that the country code data in the Scholarly Migration Database does not match with the country names in the `countries` `data.frame`. Scholarly migration database uses ISO 3166-1 alpha-3 codes, and `countrycode` uses the ISO 3166-1 alpha-2 codes. So you need to convert the country names in the `countries` `data.frame` to ISO 3166-1 alpha-3 codes.
+
+You can do this conversion using the `countrycode` package like so:
+
+```{r}
+#| eval: false
+library(countrycode)
+
+# assuming your data.frame is called `scopus_country_flows`
+scopus_country_flows <- scopus_country_flows |> 
+  mutate(
+    iso2codefrom = countrycode(iso3codefrom,
+      origin = "iso3c",
+      destination = "iso2c"),
+    iso2codeto = countrycode(iso3codeto,
+      origin = "iso3c",
+      destination = "iso2c")
+  )
+```
+
+
+
+### 3.4. Hints on plotting the flows
+
+#### `{flowmapper}`
+
+To plot the flows statically with `{flowmapper}`, you only need a regular code chunk, same as you would have for a `ggplot2` plot.
+
+Feel free to adapt [this tutorial](https://ropenspain.github.io/spanishoddata/articles/flowmaps-static.html){target="_blank"}, but use the Scholarly Migration Database data instead of the mobility data used there.
+
+#### `{flowmapblue}`
+
+To create interactive flow maps with the `{flowmapblue}`, you will need a free MapBox account. Feel free to adapt [this tutorial](https://ropenspain.github.io/spanishoddata/articles/flowmaps-interactive.html){target="_blank"}, but use the Scholarly Migration Database data instead of the mobility data used there.
+
+To include the interactive plot with `{flowmapblue}`, you may need a somewhat more sophisticated code chunk. See the instructions below.
+
+If you created an interactive flowmap like so:
+
+```{r}
+#| eval: false
+flowmap <- flowmapblue(locations = locations, flows = flows, mapboxAccessToken = mapbox_access_token)
+```
+
+But simply printing the `flowmap` object in a code block breaks your entire Quarto document, here is what you need to do.
+
+Save the `flowmap` to an `html` file:
+
+```{r}
+#| eval: false
+htmlwidgets::saveWidget(flowmap, "flowmap.html")
+```
+
+Then include the `html` file in your Quarto document like so:
+
+
+```{r}
+#| eval: false
+library(shiny)
+shiny::tags$iframe(src = "flowmap_widget.html", width = "100%", height = "600px")
+```
+
+## 4. Create your final document
+
+Once you have figured out which summary plots and which flow map you would like to include in your final document, create a copy of your draft document that you were working with and clean it up. Only keep the code that you absolutely need for the document to be rendered without errors. Name this copy `index.qmd`.
+
+Adjust the code visibility in your final document to your liking, using the Quarto documentation on [HTML blokcs](https://quarto.org/docs/output-formats/html-code.html){target="_blank"} and [code execution](https://quarto.org/docs/computations/execution-options.html){target="_blank"}.
+
+Create a file named `_quarto.yaml` in the root of the repository and add the following to it:
+
+```yaml
+#| eval: false
+project:
+  output-dir: docs
+```
+
+Make sure you respect the indentation (i.e. number of tabs/spaces before `output-dir`) of the YAML file.
+
+Then render your final Quarto document into an `html` file, it should end up in the `docs` folder with the name `index.html`.
+
+## 5. Save changes and push them to GitHub
+
+You can edit and save the files in your repository as much as you want locally. However, to save a certain clean version of your code or document to the git repository and upload it to GitHub, you also need to `commit` these changes. `commit` command "bakes" the changes you made to any files you edited permanently in the repository history. It is like a checkpoint for "undo" and "redo". A brief overview of the `git` workflow is well summarized [here](https://uidaholib.github.io/get-git/3workflow.html), but will also be demoed and discussed in class.
+
+### 5.1. Before the first commit
+
+Before the first commit, you need to execute a few commands in terminal (you can do it either in your operating system's terminal app or simply in `RStudio` or `Positron` built-in terminal).
+
+:::{.panel-tabset group="ide"}
+
+# Positron
+![Opening Positron terminal](media/images/new-terminal-positron.png)
+
+# RStudio
+
+![Opening RStudio terminal](media/images/new-terminal-rstudio.png)
+
+:::
+
+```bash
+git config --global user.name 'Your Name'
+git config --global user.email 'you54385-2@345234543example.com'
+```
+
+![Setting the name and email in RStudio terminal](media/images/set-git-username-email.png)
+
+
+Beware which name and email you set there. The name and email are public in `git` to attribute contributions to specific individuals, to ensure transparency and accountability. The email does not have to be the same email that you used to sign up for GitHub. It can even be a non-existing email. However this email will be publicly available. It will not be visible on the GitHub website, but anyone who clonse a public repository will be able to see it with a `git log` command:
+
+![Beware that your name and email are public (viewed in terminal)](media/images/git-username-email-exposed.png)
+
+![Beware that your name and email are public (viewed in RStudio git history explorer)](media/images/git-username-email-exposed-rstudio.png)
+
+### 5.2. First commit
+
+:::{.panel-tabset group="ide"}
+
+# Positron
+
+To save your changes to the local `git` repository that you have open in `Positron`, find the `Source Control` panel on the left.
+
+![Git panel in RStudio](media/images/positron-commit-001.png)
+
+You can select files that had changes or that were newly created or deleted. You can preview changes and select files that you want to save (commit) and later upload to GitHub (via `Push`). You can select one or more files to be `staged`, and only these files will be committed when you click the `Commit` button. Also, add a short comment to your commit dsecribing the changes, it will appear in the repository history.
+
+![Review changes window in RStudio and commit](media/images/positron-commit-002.png)
+
+
+After clicking the "Commit" button, the staged files will disappear from the list of changed files. You will then be able to `Push` the changes to GitHub.
+
+![Changes commited, ready to Push](media/images/positron-commit-003.png)
+
+
+# RStudio
+
+To save your changes to the local `git` repository that you have open in `RStudio`, find the `Git` panel in the top right and click the `Diff` button.
+
+![Git panel in RStudio](media/images/rstudio-commit-001.png)
+
+This will open a new window where you can preview changes in the files that you made since last commit (which in this case was made by the author of the original repository, since you have just forked it).
+
+![Review changes window in RStudio and commit](media/images/rstudio-commit-002.png)
+
+Here you can select files that had changes or that were newly created or deleted. You can preview changes and select files that you want to save (commit) and later upload to GitHub (via `Push`). You can select one or more files to be `staged`, and only these files will be committed when you click the `Commit` button. Also, add a comment to your commit dsecribing the changes.
+
+
+After clicking the "Commit" button, you will see this screen.
+
+![Changes commited](media/images/rstudio-commit-003.png)
+
+
+Close this window and upload your commited changes to GitHub by clicking the "Push" button.
+
+![Commit window in RStudio](media/images/rstudio-commit-004.png)
+
+You will see the upload screen:
+
+![Git push window in RStudio](media/images/rstudio-commit-005.png)
+
+You can now close this window and the review changes window, and go to your GitHub repository to see the changes.
+
+:::
+
+### 5.3. Publish the html file
+
+Once you have an `index.html` file in the `docs` folder, you can go to the repository settings and publish it to the web.
+
+![Publish via GitHub Pages](media/images/gh-pages-setup.png)
+
+You will need to wait a few minutes. You only have one page, so it should not take too long. Reload the settings page and you should see your web link:
+
+![Website published](media/images/gh-pages-setup-done.png)
+
+You can also go to your repository homepage and add this link in the right side of the repository page:
+
+![Repository view settings](media/images/gh-pages-link.png)
+
+
+
+## 6. Submit
+
+Post the link to your repository and/or website in `Issues` of this repository:
+[https://github.com/e-kotov/2025-EDSD-open-science-quarto-github/issues](https://github.com/e-kotov/2025-EDSD-open-science-quarto-github/issues){target="_blank"}

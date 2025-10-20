@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+type: dataset
+title: "Open Science and Reproducibility with Quarto, GitHub, and R 2025"
+authors:
+  - family-names: "Kotov"
+    given-names: "Egor"
+    orcid: "https://orcid.org/0000-0001-6690-5345"
+repository-code: "https://github.com/e-kotov/2025-EDSD-open-science-quarto-github"
+url: "https://www.ekotov.pro/2025-EDSD-open-science-quarto-github"
+version: "0.9.0"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.XXXXX
+date-released: "2025-10-21"
+license: "CC-BY-SA-4.0"
+message: "If you use these workshop materials or this website, please cite it using the following metadata."

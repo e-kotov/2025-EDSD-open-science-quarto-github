@@ -1,0 +1,54 @@
+---
+title: "👋 Workshop Introduction"
+
+author:
+  - name: Egor Kotov
+    url: https://www.ekotov.pro/
+    orcid: 0000-0001-6690-5345
+    affiliations:
+      - ref: mpidr
+      - ref: upf
+
+affiliations:
+  - id: mpidr
+    name: Max Planck Institute for Demographic Research
+    city: Rostock
+    country: Germany
+    url: https://demogr.mpg.de/
+  - id: upf
+    name: Universitat Pompeu Fabra
+    city: Barcelona
+    country: Spain
+    url: https://www.upf.edu/
+---
+
+This website provides supporting materials for the workshop **Open Science and Reproducibility with Quarto, GitHub, and R** which is part of the [European Doctoral School of Demography (EDSD)](https://www.eaps.nl/edsd/About-EDSD){target="_blank"} 2025 preparatory courses hosted by the [Max Planck Institute for Demographic Research](https://demogr.mpg.de/){target="_blank"} (Rostock, Germany). This website, its source as well as all the supporting materials are licensed under the [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.
+
+
+
+## Expected learning outcomes
+
+- Able to use `Quarto` to create `html` documents with plain and markdown-formatted text and `R` code that produces tables, plots, or other outputs.
+
+- Able to upload a project with reproducible analysis to GitHub using `git`.
+
+- Able to collaborate on a project hosted on GitHub using *Issues*.
+
+
+### Prerequisites
+Students must have basic `R` training, including knowledge of the `tidyverse` for data manipulation and `ggplot2` for data visualization, as well as familiarity with `RStudio` (as provided in the [**EDSD 140 Computer Programming for Demographers**](https://github.com/christiandudel/EDSD2025){target="_blank"} course). To participate in the workshop, we recommend that you have a [GitHub](https://github.com/){target="_blank"} account and have `R`, `RStudio`, and `git` installed. You can follow the setup instructions [here](setup.qmd).
+
+::: callout-note
+While we are using GitHub for this workshop, mind you that there are alternative platforms for hosting code repositories, such as [GitLab](https://gitlab.com/){target="_blank"}, [Codeberg](https://codeberg.org/){target="_blank"}, [Bitbucket](https://bitbucket.org/){target="_blank"}, and others, including institutional `git` repositories (e.g. [https://gitlab.uni-marburg.de/explore](https://gitlab.uni-marburg.de/explore), [https://git.univ-pau.fr/explore](https://git.univ-pau.fr/explore)). The choice of platform often depends on personal preference, specific project requirements, or institutional guidelines. These platforms may offer slighly different features and web interfaces, but the underlying `git` functionalities remain consistent across them.
+:::
+
+
+### Recommended readings
+1. How to create a GitHub account: [https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github)
+2. Brief intro to Quarto: [https://quarto.org/docs/get-started/hello/rstudio.html](https://quarto.org/docs/get-started/hello/rstudio.html)
+3. Quarto documentation: [https://quarto.org/docs/reference/](https://quarto.org/docs/reference/)
+
+
+`Quarto` is *"an open-source scientific and technical publishing system"* [^1] that allows you to generate reproducible reports, websites, presentations and much more, by mixing plain text, simple [markdown](https://quarto.org/docs/authoring/markdown-basics.html){target="_blank"} text formatting, and code. And not just `R` code, but also `Python` and `Julia`. The output format can be `html`, `pdf`, but also `docx` (if you really need it). You can also use addons/extensions to convert simple documents written in `Quarto` to publication ready `pdf`s using relevant [templates](https://quarto.org/docs/extensions/listing-journals.html){target="_blank"}.
+
+[^1]: Source: <https://quarto.org/>
