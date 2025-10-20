@@ -6,7 +6,7 @@ toc-depth: 3
 
 Your task is to create a reproducible summary report with key statistics and a flowmap using the [Scholarly Migration Database](https://www.scholarlymigration.org/){target="_blank"}. This is a beginner level task. 
 
-If you are feeling especially confident, you can use the data from the [The Human Migration Database](https://github.com/MaciejDanko/HMigD_Shiny_App_I), which you can download via the interactive [web app](https://maciej-jan-danko.shinyapps.io/HMigD_Shiny_App_I/) (see last the tab for downloads). Warning: this is likely take more time than with the Scholarly Migration Database, as there are more data columns and you will spend more time reading the codebook. So only go for this task if the R programming part and Quarto are easy for your.
+If you are feeling especially confident, you can use the data from the [The Human Migration Database](https://github.com/MaciejDanko/HMigD_Shiny_App_I), which you can download via the interactive [web app](https://maciej-jan-danko.shinyapps.io/HMigD_Shiny_App_I/) (see last the tab for downloads). Warning: this is likely take more time than with the Scholarly Migration Database, as there are more data columns and you will spend more time reading the codebook. So only go for this task if the R programming part and Quarto are too easy for you. You can also explore [https://closeread.dev/](https://closeread.dev/) for creating "storytelling" style of your published document to showcase your analysis even better (see the [gallery here](https://closeread.dev/gallery/#special-prizes)).
 
 # Final goal
 
