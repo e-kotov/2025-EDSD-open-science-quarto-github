@@ -10,7 +10,7 @@ url: "https://www.ekotov.pro/2025-EDSD-open-science-quarto-github"
 version: "0.9.0"
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.XXXXX
+    value: 10.5281/zenodo.17401408
 date-released: "2025-10-21"
 license: "CC-BY-SA-4.0"
 message: "If you use these workshop materials or this website, please cite it using the following metadata."

@@ -79,6 +79,8 @@ citation:
   type: webpage
   title: "Open Science and Reproducibility with Quarto, GitHub, and R 2025"
   issued: 2025-10-21
+  doi: 10.5281/zenodo.17401408
+doi: 10.5281/zenodo.17401408
 google-scholar: true
 
 editor: source
