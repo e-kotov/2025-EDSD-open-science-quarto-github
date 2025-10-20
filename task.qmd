@@ -418,6 +418,12 @@ You can now close this window and the review changes window, and go to your GitH
 
 :::
 
+::: callout-tip
+Can you undo a commit? Yes, you can. But be careful when doing this, as it may lead to loss of work if you are not careful. Try asking your favourite large language model how do do this safely and what could be the implications.
+
+Also, if you are collaborating with someone on a GitHub repository, learn to use branches and pull requests to avoid overwriting each other's work or getting erroes when trying to push changes.
+:::
+
 ### 5.3. Publish the html file
 
 Once you have an `index.html` file in the `docs` folder, you can go to the repository settings and publish it to the web.
