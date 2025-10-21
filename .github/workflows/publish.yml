@@ -31,6 +31,10 @@ jobs:
                 libfreetype6-dev \
                 libgdal-dev \
                 libudunits2-dev \
+                libharfbuzz-dev \
+                libfribidi-dev \ 
+                libfreetype6-dev \
+                libpng-dev \
                 libx11-dev \
                 pandoc
 
