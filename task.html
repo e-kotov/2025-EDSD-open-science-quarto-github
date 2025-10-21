@@ -140,6 +140,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="citation_cover_date" content="2025-10-21">
 <meta name="citation_year" content="2025">
 <meta name="citation_fulltext_html_url" content="https://www.ekotov.pro/2025-EDSD-open-science-quarto-github/task.html">
+<meta name="citation_doi" content="10.5281/zenodo.17401408">
 <meta name="citation_language" content="en">
 </head>
 
@@ -460,6 +461,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       
   
     
+    <div>
+    <div class="quarto-title-meta-heading">Doi</div>
+    <div class="quarto-title-meta-contents">
+      <p class="doi">
+        <a href="https://doi.org/10.5281/zenodo.17401408">10.5281/zenodo.17401408</a>
+      </p>
+    </div>
+  </div>
   </div>
   
 
@@ -468,7 +477,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Your task is to create a reproducible summary report with key statistics and a flowmap using the <a href="https://www.scholarlymigration.org/" target="_blank">Scholarly Migration Database</a>. This is a beginner level task.</p>
-<p>If you are feeling especially confident, you can use the data from the <a href="https://github.com/MaciejDanko/HMigD_Shiny_App_I">The Human Migration Database</a>, which you can download via the interactive <a href="https://maciej-jan-danko.shinyapps.io/HMigD_Shiny_App_I/">web app</a> (see last the tab for downloads). Warning: this is likely take more time than with the Scholarly Migration Database, as there are more data columns and you will spend more time reading the codebook. So only go for this task if the R programming part and Quarto are easy for your.</p>
+<p>If you are feeling especially confident, you can use the data from the <a href="https://github.com/MaciejDanko/HMigD_Shiny_App_I">The Human Migration Database</a>, which you can download via the interactive <a href="https://maciej-jan-danko.shinyapps.io/HMigD_Shiny_App_I/">web app</a> (see last the tab for downloads). Warning: this is likely take more time than with the Scholarly Migration Database, as there are more data columns and you will spend more time reading the codebook. So only go for this task if the R programming part and Quarto are too easy for you. You can also explore <a href="https://closeread.dev/">https://closeread.dev/</a> for creating “storytelling” style of your published document to showcase your analysis even better (see the <a href="https://closeread.dev/gallery/#special-prizes">gallery here</a>).</p>
 <section id="final-goal" class="level1">
 <h1>Final goal</h1>
 <p>The final goal is to have a repository on GitHub with:</p>
@@ -476,13 +485,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>a reproducible Quarto (<code>*.qmd</code>) document in the root of the repository</p></li>
 <li><p>an <code>html</code> file created from the <code>*.qmd</code> file above in the <code>docs</code> folder of the repository</p></li>
 <li><p>a <code>README.md</code> file in the root of the repository that briefly describes the project (e.g.&nbsp;specifies that this is an assignment done as part of EDSD linking back to EDSD website, or to this workshop materials, etc. )</p></li>
+<li><p>post the link to your repository and/or website in <code>Issues</code> of this repository: <a href="https://github.com/e-kotov/2025-EDSD-open-science-quarto-github/issues" target="_blank">https://github.com/e-kotov/2025-EDSD-open-science-quarto-github/issues</a></p></li>
 </ul>
 <p>Requirements:</p>
 <ul>
 <li><p>The Quarto document can be rendered without errors into an <code>html</code> file</p></li>
 <li><p>The document contains R code to load the data and perform any neccessary data transformation for visualisation. Instead of commenting the code, use plain or markdown-formatted text outside the code blocks.</p></li>
 <li><p>The document contains at least two figures summarizing the flows data (e.g.&nbsp;a histogram, a scatter plot, etc.)</p></li>
-<li><p>The document contains a flowmap</p></li>
+<li><p>The document contains a flowmap (either static with <code>{flowmapper}</code> or interactive with <code>{flowmapblue}</code>) showing the migration flows of scholars between countries.</p></li>
 <li><p>The document layout uses some of the custom figure placement options from <a href="https://quarto.org/docs/authoring/article-layout.html" target="_blank">Article Layout</a>.</p></li>
 </ul>
 </section>
@@ -906,6 +916,20 @@ $ name_long &lt;chr&gt; "Fiji", "Tanzania", "Western Sahara", "Canada", "United 
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Can you undo a commit? Yes, you can. But be careful when doing this, as it may lead to loss of work if you are not careful. Try asking your favourite large language model how do do this safely and what could be the implications.</p>
+<p>Also, if you are collaborating with someone on a GitHub repository, learn to use branches and pull requests to avoid overwriting each other’s work or getting erroes when trying to push changes.</p>
+</div>
+</div>
 </section>
 <section id="publish-the-html-file" class="level3">
 <h3 class="anchored" data-anchor-id="publish-the-html-file">5.3. Publish the html file</h3>
@@ -946,11 +970,12 @@ $ name_long &lt;chr&gt; "Fiji", "Tanzania", "Western Sahara", "Canada", "United 
     and {R} 2025},
   date = {2025-10-21},
   url = {https://www.ekotov.pro/2025-EDSD-open-science-quarto-github/task.html},
+  doi = {10.5281/zenodo.17401408},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kotov2025" class="csl-entry quarto-appendix-citeas" role="listitem">
 Kotov, Egor. 2025. <span>“Open Science and Reproducibility with Quarto,
-GitHub, and R 2025.”</span> October 21, 2025. <a href="https://www.ekotov.pro/2025-EDSD-open-science-quarto-github/task.html">https://www.ekotov.pro/2025-EDSD-open-science-quarto-github/task.html</a>.
+GitHub, and R 2025.”</span> October 21, 2025. <a href="https://doi.org/10.5281/zenodo.17401408">https://doi.org/10.5281/zenodo.17401408</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
