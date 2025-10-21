@@ -4,6 +4,6 @@ This repository provides supporting materials for the workshop on **Open Science
 
 The students worked with the [Scholarly Migration Database](https://www.scholarlymigration.org/), the analysed and visualised the flows data and published their analysis on GitHub.
 
-The tutorial was original held on 2025-10-21 and 2025-10-22.
+The tutorial was originally held on 2025-10-21 and 2025-10-22.
 
 Kindly access the tutorial website at [https://www.ekotov.pro/2025-EDSD-open-science-quarto-github/](https://www.ekotov.pro/2025-EDSD-open-science-quarto-github/).
