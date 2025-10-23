@@ -78,9 +78,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9e799c111b2bb9ef9b0a24d13d3f6855.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-7db2460f5e8273e590d0818402fc37df.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-9e799c111b2bb9ef9b0a24d13d3f6855.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-86081f689265380eb715f027a53eacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-e89a5e8f0e28d7327a7a2d0b2a4de15c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-86081f689265380eb715f027a53eacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -603,7 +603,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="media/images/new-positron-quarto-doc-new.png" class="img-fluid"></p>
 <ul>
 <li><p>Using the basic R and Quarto syntax (see <a href="https://quarto.org/docs/get-started/computations/rstudio.html" target="_blank">intro reference of basic Quarto syntax here</a>), list the packages you need to be loaded in the first chunk/block of code.</p></li>
-<li><p>Add more chunks/blocks of code to load the data (you may use either <strong>openalex_2024_V1_scholarlymigration_countryflows_enriched.csv</strong> or <strong>scopus_2024_V1_scholarlymigration_countryflows_enriched.csv</strong>) and explore it. You may ignore the code visibility options for now. Just leave default options for code blocks by not addint any options at this point. Use <a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a> for data manipulation and <a href="https://ggplot2.tidyverse.org/"><code>{ggplot2}</code></a> for data visualization.</p></li>
+<li><p>Add more chunks/blocks of code to load the data (you may use either <strong>openalex_2024_V1_scholarlymigration_countryflows_enriched.csv</strong> or <strong>scopus_2024_V1_scholarlymigration_countryflows_enriched.csv</strong> that you will find in subfolders of the repository that you forked and cloned) and explore it. You may ignore the code visibility options for now. Just leave default options for code blocks by not addint any options at this point. Use <a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a> for data manipulation and <a href="https://ggplot2.tidyverse.org/"><code>{ggplot2}</code></a> for data visualization.</p></li>
 </ul>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
@@ -616,7 +616,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="media/images/new-quarto-doc-file-pane.png" class="img-fluid"></p>
 <ul>
 <li><p>Using the basic R and Quarto syntax (see <a href="https://quarto.org/docs/get-started/computations/rstudio.html" target="_blank">intro reference of basic Quarto syntax here</a>), list the packages you need to be loaded in the first chunk/block of code.</p></li>
-<li><p>Add more chunks/blocks of code to load the data (you may use either <strong>openalex_2024_V1_scholarlymigration_countryflows_enriched.csv</strong> or <strong>scopus_2024_V1_scholarlymigration_countryflows_enriched.csv</strong>) and explore it. You may ignore the code visibility options for now. Just leave default options for code blocks by not addint any options at this point. Use <a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a> for data manipulation and <a href="https://ggplot2.tidyverse.org/"><code>{ggplot2}</code></a> for data visualization.</p></li>
+<li><p>Add more chunks/blocks of code to load the data (you may use either <strong>openalex_2024_V1_scholarlymigration_countryflows_enriched.csv</strong> or <strong>scopus_2024_V1_scholarlymigration_countryflows_enriched.csv</strong> that you will find in subfolders of the repository that you forked and cloned) and explore it. You may ignore the code visibility options for now. Just leave default options for code blocks by not addint any options at this point. Use <a href="https://dplyr.tidyverse.org/"><code>{dplyr}</code></a> for data manipulation and <a href="https://ggplot2.tidyverse.org/"><code>{ggplot2}</code></a> for data visualization.</p></li>
 </ul>
 </div>
 </div>
@@ -738,7 +738,7 @@ $ name_long &lt;chr&gt; "Fiji", "Tanzania", "Western Sahara", "Canada", "United 
 </div>
 </div>
 <p>You may freely reuse this code above in your Quarto report.</p>
-<p>The data format you get is ideal for both <a href="https://flowmapblue.github.io/flowmapblue.R/" target="_blank"><code>{flowmapblue}</code></a> and <a href="https://github.com/JohMast/flowmapper"><code>{flowmapper}</code></a> packages. You only need to tweak the column names of the <code>countries_centroids</code> <code>data.frame</code> before using it with either of these packages. You can see relevant package documentation for more details. Alternatively, you can follow tutorials for <a href="https://ropenspain.github.io/spanishoddata/articles/flowmaps-static.html#reshape-flows-for-visualization" target="_blank"><code>{flowmapper}</code></a> and <a href="https://ropenspain.github.io/spanishoddata/articles/flowmaps-interactive.html#prepare-data-for-visualization" target="_blank"><code>{flowmapblue}</code></a>.</p>
+<p>The data format you get is ideal for both <a href="https://flowmapblue.github.io/flowmapblue.R/" target="_blank"><code>{flowmapblue}</code></a> and <a href="https://github.com/JohMast/flowmapper"><code>{flowmapper}</code></a> packages. You only need to tweak the column names of the <code>countries_centroids</code> <code>data.frame</code> before using it with either of these packages. You can see relevant package documentation for more details. Alternatively, you can follow tutorials for <a href="https://ropenspain.github.io/spanishoddata/articles/flowmaps-static.html#reshape-flows-for-visualization" target="_blank"><code>{flowmapper}</code></a> and <a href="https://ropenspain.github.io/spanishoddata/articles/flowmaps-interactive.html#prepare-data-for-visualization" target="_blank"><code>{flowmapblue}</code></a>. Note that these tutorials focus on Spanish mobility data instead of the data you are working on, so you would need to adapt the code, but the tutorials will at least provide you with a clear stucture of the tables you need to use either <code>{flowmapper}</code> or <code>{flowmapblue}</code>.</p>
 </section>
 <section id="country-codes" class="level3">
 <h3 class="anchored" data-anchor-id="country-codes">3.3. Country codes</h3>
@@ -782,7 +782,7 @@ $ name_long &lt;chr&gt; "Fiji", "Tanzania", "Western Sahara", "Canada", "United 
 <p>Then include the <code>html</code> file in your Quarto document like so:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>shiny<span class="sc">::</span>tags<span class="sc">$</span><span class="fu">iframe</span>(<span class="at">src =</span> <span class="st">"flowmap_widget.html"</span>, <span class="at">width =</span> <span class="st">"100%"</span>, <span class="at">height =</span> <span class="st">"600px"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>shiny<span class="sc">::</span>tags<span class="sc">$</span><span class="fu">iframe</span>(<span class="at">src =</span> <span class="st">"flowmap.html"</span>, <span class="at">width =</span> <span class="st">"100%"</span>, <span class="at">height =</span> <span class="st">"600px"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
