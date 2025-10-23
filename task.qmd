@@ -137,7 +137,7 @@ You will get:
 
 - Using the basic R and Quarto syntax (see [intro reference of basic Quarto syntax here](https://quarto.org/docs/get-started/computations/rstudio.html){target="_blank"}), list the packages you need to be loaded in the first chunk/block of code.
 
-- Add more chunks/blocks of code to load the data (you may use either **openalex_2024_V1_scholarlymigration_countryflows_enriched.csv** or **scopus_2024_V1_scholarlymigration_countryflows_enriched.csv**) and explore it. You may ignore the code visibility options for now. Just leave default options for code blocks by not addint any options at this point. Use [`{dplyr}`](https://dplyr.tidyverse.org/) for data manipulation and [`{ggplot2}`](https://ggplot2.tidyverse.org/) for data visualization.
+- Add more chunks/blocks of code to load the data (you may use either **openalex_2024_V1_scholarlymigration_countryflows_enriched.csv** or **scopus_2024_V1_scholarlymigration_countryflows_enriched.csv** that you will find in subfolders of the repository that you forked and cloned) and explore it. You may ignore the code visibility options for now. Just leave default options for code blocks by not addint any options at this point. Use [`{dplyr}`](https://dplyr.tidyverse.org/) for data manipulation and [`{ggplot2}`](https://ggplot2.tidyverse.org/) for data visualization.
 
 
 # RStudio
@@ -154,7 +154,7 @@ Or in the bottom right in the Files pane:
 
 - Using the basic R and Quarto syntax (see [intro reference of basic Quarto syntax here](https://quarto.org/docs/get-started/computations/rstudio.html){target="_blank"}), list the packages you need to be loaded in the first chunk/block of code.
 
-- Add more chunks/blocks of code to load the data (you may use either **openalex_2024_V1_scholarlymigration_countryflows_enriched.csv** or **scopus_2024_V1_scholarlymigration_countryflows_enriched.csv**) and explore it. You may ignore the code visibility options for now. Just leave default options for code blocks by not addint any options at this point. Use [`{dplyr}`](https://dplyr.tidyverse.org/) for data manipulation and [`{ggplot2}`](https://ggplot2.tidyverse.org/) for data visualization.
+- Add more chunks/blocks of code to load the data (you may use either **openalex_2024_V1_scholarlymigration_countryflows_enriched.csv** or **scopus_2024_V1_scholarlymigration_countryflows_enriched.csv** that you will find in subfolders of the repository that you forked and cloned) and explore it. You may ignore the code visibility options for now. Just leave default options for code blocks by not addint any options at this point. Use [`{dplyr}`](https://dplyr.tidyverse.org/) for data manipulation and [`{ggplot2}`](https://ggplot2.tidyverse.org/) for data visualization.
 
 :::
 
@@ -252,7 +252,7 @@ glimpse(countries_centroids)
 
 You may freely reuse this code above in your Quarto report.
 
-The data format you get is ideal for both [`{flowmapblue}`](https://flowmapblue.github.io/flowmapblue.R/){target="_blank"} and [`{flowmapper}`](https://github.com/JohMast/flowmapper) packages. You only need to tweak the column names of the `countries_centroids` `data.frame` before using it with either of these packages. You can see relevant package documentation for more details. Alternatively, you can follow tutorials for [`{flowmapper}`](https://ropenspain.github.io/spanishoddata/articles/flowmaps-static.html#reshape-flows-for-visualization){target="_blank"} and [`{flowmapblue}`](https://ropenspain.github.io/spanishoddata/articles/flowmaps-interactive.html#prepare-data-for-visualization){target="_blank"}.
+The data format you get is ideal for both [`{flowmapblue}`](https://flowmapblue.github.io/flowmapblue.R/){target="_blank"} and [`{flowmapper}`](https://github.com/JohMast/flowmapper) packages. You only need to tweak the column names of the `countries_centroids` `data.frame` before using it with either of these packages. You can see relevant package documentation for more details. Alternatively, you can follow tutorials for [`{flowmapper}`](https://ropenspain.github.io/spanishoddata/articles/flowmaps-static.html#reshape-flows-for-visualization){target="_blank"} and [`{flowmapblue}`](https://ropenspain.github.io/spanishoddata/articles/flowmaps-interactive.html#prepare-data-for-visualization){target="_blank"}. Note that these tutorials focus on Spanish mobility data instead of the data you are working on, so you would need to adapt the code, but the tutorials will at least provide you with a clear stucture of the tables you need to use either `{flowmapper}` or `{flowmapblue}`.
 
 ### 3.3. Country codes
 
@@ -314,7 +314,7 @@ Then include the `html` file in your Quarto document like so:
 ```{r}
 #| eval: false
 library(shiny)
-shiny::tags$iframe(src = "flowmap_widget.html", width = "100%", height = "600px")
+shiny::tags$iframe(src = "flowmap.html", width = "100%", height = "600px")
 ```
 
 ## 4. Create your final document
